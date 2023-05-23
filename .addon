@@ -23,7 +23,7 @@
       "DistinctReferences": []
     },
     "Summary": "Numerics extension library",
-    "Description": "",
+    "Description": "Source code https://github.com/Phyksar/csharp-numerics",
     "Public": false,
     "ReplaceTags": "math numerics"
   }
