@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<AssemblyName>CSharpNumerics.Tests</AssemblyName>
+		<PackageId>CSharpNumericsTests</PackageId>
+		<LangVersion>11</LangVersion>
+		<NoWarn>1701;1702;1591;</NoWarn>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<DefineConstants>SANDBOX;ADDON;DEBUG</DefineConstants>
+		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup>
+		<OutputPath>.\bin\</OutputPath>
+		<RootNamespace>Sandbox</RootNamespace>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include=".\..\code\CSharpNumerics.csproj" />
+		<Using Include="Sandbox.Internal.GlobalGameNamespace" Static="true" />
+		<Analyzer Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.Generator.dll"/>
+		<Reference Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.System.dll" />
+		<Reference Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.Engine.dll" />
+		<Reference Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.Game.dll" />
+		<Reference Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.Event.dll" />
+		<Reference Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.Bind.dll" />
+		<Reference Include="$(FACEPUNCH_SANDBOX_PATH)\bin\managed\Sandbox.Reflection.dll" />
+		<PackageReference Include="nunit" Version="3.13.3" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+	</ItemGroup>
+</Project>

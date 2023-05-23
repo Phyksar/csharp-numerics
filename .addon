@@ -1,18 +1,30 @@
 {
   "Title": "CSharp Numerics",
   "Type": "library",
-  "Org": "local",
-  "Ident": "csharp_numerics",
+  "Org": "phyksar",
+  "Ident": "csharp-numerics",
   "Tags": null,
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
   "ResourcePaths": null,
   "HasCode": true,
-  "CodePath": ".",
+  "CodePath": "code",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
-    "ProjectTemplate": null
+    "ProjectTemplate": null,
+    "CsProjName": "CSharpNumerics",
+    "Compiler": {
+      "RootNamespace": "Sandbox",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "References": [],
+      "DistinctReferences": []
+    },
+    "Summary": "Numerics extension library",
+    "Description": "",
+    "Public": false,
+    "ReplaceTags": "math numerics"
   }
 }

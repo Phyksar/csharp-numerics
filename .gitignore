@@ -1,4 +1,6 @@
-/.vs
-/[Oo]bj
-/[Pp]roperties
-*.csproj
+.vs/
+[Bb]in/
+[Oo]bj/
+[Pp]roperties/
+
+/code/*.csproj
