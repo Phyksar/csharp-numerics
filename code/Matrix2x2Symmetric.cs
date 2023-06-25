@@ -178,17 +178,17 @@ public struct Matrix2x2Symmetric : IEquatable<Matrix2x2Symmetric>
 		};
 	}
 
-	public static Vector3 operator *(in Matrix2x2Symmetric value1, in Vector3 value2)
+	public static Vector2 operator *(in Matrix2x2Symmetric value1, in Vector2 value2)
 	{
-		return new Vector3 {
+		return new Vector2 {
 			x = value1.M11 * value2.x + value1.M12 * value2.y,
 			y = value1.M12 * value2.x + value1.M22 * value2.y,
 		};
 	}
 
-	public static Vector3 operator *(in Vector3 value1, in Matrix2x2Symmetric value2)
+	public static Vector2 operator *(in Vector2 value1, in Matrix2x2Symmetric value2)
 	{
-		return new Vector3 {
+		return new Vector2 {
 			x = value2.M11 * value1.x + value2.M12 * value1.y,
 			y = value2.M12 * value1.x + value2.M22 * value1.y
 		};

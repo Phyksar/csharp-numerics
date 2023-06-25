@@ -7,7 +7,8 @@
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "ResourcePaths": null,
+  "Resources": null,
+  "MenuResources": null,
   "HasCode": true,
   "CodePath": "code",
   "PackageReferences": [],
@@ -23,8 +24,8 @@
       "DistinctReferences": []
     },
     "Summary": "Numerics extension library",
-    "Description": "Source code https://github.com/Phyksar/csharp-numerics",
-    "Public": false,
+    "Description": "https://github.com/Phyksar/csharp-numerics",
+    "Public": true,
     "ReplaceTags": "math numerics"
   }
 }
