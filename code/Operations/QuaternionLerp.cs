@@ -18,9 +18,14 @@ public struct QuaternionLerp
 	public Quaternion ValueB;
 
 	/// <summary>
-	/// The most recent update time of interpolation.
+	/// The first and the most recent update time of interpolation.
 	/// </summary>
-	public float UpdateTime;
+	public float TimeA;
+
+	/// <summary>
+	/// The second and the oldest update time of interpolation.
+	/// </summary>
+	public float TimeB;
 
 	/// <summary>
 	/// Create a float interpolation from value and time.
@@ -35,7 +40,8 @@ public struct QuaternionLerp
 	{
 		ValueA = value;
 		ValueB = value;
-		UpdateTime = time;
+		TimeA = time;
+		TimeB = time;
 	}
 
 	/// <summary>
@@ -51,7 +57,8 @@ public struct QuaternionLerp
 	{
 		ValueB = ValueA;
 		ValueA = value;
-		UpdateTime = time;
+		TimeB = TimeA;
+		TimeA = time;
 	}
 
 	/// <summary>
@@ -60,14 +67,14 @@ public struct QuaternionLerp
 	/// <param name="time">
 	/// The current time to compare recent update with.
 	/// </param>
-	/// <param name="deltaTime">
-	/// The time delta between two last updates.
-	/// </param>
 	/// <returns>
 	/// The interpolated value.
 	/// </returns>
-	public Quaternion Evaluate(float time, float deltaTime)
+	public Quaternion Evaluate(float time)
 	{
-		return Quaternion.Slerp(ValueB, ValueA, (time - UpdateTime) / deltaTime);
+		if (TimeA == TimeB) {
+			return ValueA;
+		}
+		return Quaternion.Slerp(ValueB, ValueA, (time - TimeA) / (TimeA - TimeB));
 	}
 }

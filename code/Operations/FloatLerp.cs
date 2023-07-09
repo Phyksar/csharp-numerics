@@ -16,9 +16,14 @@ public struct FloatLerp
 	public float ValueB;
 
 	/// <summary>
-	/// The most recent update time of interpolation.
+	/// The first and the most recent update time of interpolation.
 	/// </summary>
-	public float UpdateTime;
+	public float TimeA;
+
+	/// <summary>
+	/// The second and the oldest update time of interpolation.
+	/// </summary>
+	public float TimeB;
 
 	/// <summary>
 	/// Create a float interpolation from value and time.
@@ -33,7 +38,8 @@ public struct FloatLerp
 	{
 		ValueA = value;
 		ValueB = value;
-		UpdateTime = time;
+		TimeA = time;
+		TimeB = time;
 	}
 
 	/// <summary>
@@ -49,7 +55,8 @@ public struct FloatLerp
 	{
 		ValueB = ValueA;
 		ValueA = value;
-		UpdateTime = time;
+		TimeB = TimeA;
+		TimeA = time;
 	}
 
 	/// <summary>
@@ -58,15 +65,15 @@ public struct FloatLerp
 	/// <param name="time">
 	/// The current time to compare with.
 	/// </param>
-	/// <param name="deltaTime">
-	/// The time delta between two last updates.
-	/// </param>
 	/// <returns>
 	/// The interpolated value.
 	/// </returns>
-	public float Evaluate(float time, float deltaTime)
+	public float Evaluate(float time)
 	{
-		var fraction = (time - UpdateTime) / deltaTime;
+		if (TimeA == TimeB) {
+			return ValueA;
+		}
+		var fraction = (time - TimeA) / (TimeA - TimeB);
 		return ValueA * fraction + ValueB * (1.0f - fraction);
 	}
 }
