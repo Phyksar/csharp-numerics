@@ -6,7 +6,7 @@ using SystemVector3 = System.Numerics.Vector3;
 namespace Phyksar.Numerics;
 
 /// <summary>
-/// Represents a 2x2 matrix.
+/// Represents a 3x3 matrix.
 /// </summary>
 public struct Matrix3x3 : IEquatable<Matrix3x3>
 {
@@ -177,7 +177,7 @@ public struct Matrix3x3 : IEquatable<Matrix3x3>
 	public readonly bool IsIdentity => this.Equals(Identity);
 
 	/// <summary>
-	/// Calculates the determinant of the current 2x2 matrix.
+	/// Calculates the determinant of the current 3x3 matrix.
 	/// </summary>
 	/// <returns>
 	/// The determinant.
@@ -544,7 +544,7 @@ public struct Matrix3x3 : IEquatable<Matrix3x3>
 	}
 
 	/// <summary>
-	/// Returns a value that indicates whether this instance and another 2x2 matrix are equal.
+	/// Returns a value that indicates whether this instance and another 3x3 matrix are equal.
 	/// </summary>
 	/// <param name="other">
 	/// The other matrix.
