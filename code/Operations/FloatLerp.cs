@@ -73,7 +73,7 @@ public struct FloatLerp
 		if (TimeA == TimeB) {
 			return ValueA;
 		}
-		var fraction = (time - TimeA) / (TimeA - TimeB);
+		var fraction = (time - TimeB) / (TimeA - TimeB);
 		return ValueA * fraction + ValueB * (1.0f - fraction);
 	}
 }
