@@ -75,6 +75,6 @@ public struct QuaternionLerp
 		if (TimeA == TimeB) {
 			return ValueA;
 		}
-		return Quaternion.Slerp(ValueB, ValueA, (time - TimeA) / (TimeA - TimeB));
+		return Quaternion.Slerp(ValueB, ValueA, (time - TimeB) / (TimeA - TimeB));
 	}
 }
