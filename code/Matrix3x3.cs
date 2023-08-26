@@ -306,18 +306,18 @@ public struct Matrix3x3 : IEquatable<Matrix3x3>
 	/// <returns>
 	/// The matrix.
 	/// </returns>
-	public static Matrix3x3 CreateFromVectors(in Vector3 axisX, in Vector3 axisY, in Vector3 axisZ)
+	public static Matrix3x3 CreateFromVectors(in SystemVector3 axisX, in SystemVector3 axisY, in SystemVector3 axisZ)
 	{
 		return new Matrix3x3 {
-			M11 = axisX.x,
-			M12 = axisY.x,
-			M13 = axisZ.x,
-			M21 = axisX.y,
-			M22 = axisY.y,
-			M23 = axisZ.y,
-			M31 = axisX.z,
-			M32 = axisY.z,
-			M33 = axisZ.z
+			M11 = axisX.X,
+			M12 = axisY.X,
+			M13 = axisZ.X,
+			M21 = axisX.Y,
+			M22 = axisY.Y,
+			M23 = axisZ.Y,
+			M31 = axisX.Z,
+			M32 = axisY.Z,
+			M33 = axisZ.Z
 		};
 	}
 
@@ -360,17 +360,17 @@ public struct Matrix3x3 : IEquatable<Matrix3x3>
 	/// <returns>
 	/// The skew-symmetric matrix.
 	/// </returns>
-	public static Matrix3x3 CreateSkewSymmetric(in Vector3 skew)
+	public static Matrix3x3 CreateSkewSymmetric(in SystemVector3 skew)
 	{
 		return new Matrix3x3 {
 			M11 = 0.0f,
-			M12 = -skew.z,
-			M13 = skew.y,
-			M21 = skew.z,
+			M12 = -skew.Z,
+			M13 = skew.Y,
+			M21 = skew.Z,
 			M22 = 0.0f,
-			M23 = -skew.x,
-			M31 = -skew.y,
-			M32 = skew.x,
+			M23 = -skew.X,
+			M31 = -skew.Y,
+			M32 = skew.X,
 			M33 = 0.0f
 		};
 	}
@@ -741,12 +741,12 @@ public struct Matrix3x3 : IEquatable<Matrix3x3>
 	/// <returns>
 	/// The transformed vector.
 	/// </returns>
-	public static Vector3 operator *(in Matrix3x3 matrix, in Vector3 vector)
+	public static SystemVector3 operator *(in Matrix3x3 matrix, in SystemVector3 vector)
 	{
-		return new Vector3 {
-			x = matrix.M11 * vector.x + matrix.M12 * vector.y + matrix.M13 * vector.z,
-			y = matrix.M21 * vector.x + matrix.M22 * vector.y + matrix.M23 * vector.z,
-			z = matrix.M31 * vector.x + matrix.M32 * vector.y + matrix.M33 * vector.z
+		return new SystemVector3 {
+			X = matrix.M11 * vector.X + matrix.M12 * vector.Y + matrix.M13 * vector.Z,
+			Y = matrix.M21 * vector.X + matrix.M22 * vector.Y + matrix.M23 * vector.Z,
+			Z = matrix.M31 * vector.X + matrix.M32 * vector.Y + matrix.M33 * vector.Z
 		};
 	}
 
@@ -762,12 +762,12 @@ public struct Matrix3x3 : IEquatable<Matrix3x3>
 	/// <returns>
 	/// The transformed vector.
 	/// </returns>
-	public static Vector3 operator *(in Vector3 vector, in Matrix3x3 matrix)
+	public static SystemVector3 operator *(in SystemVector3 vector, in Matrix3x3 matrix)
 	{
-		return new Vector3 {
-			x = matrix.M11 * vector.x + matrix.M21 * vector.y + matrix.M31 * vector.z,
-			y = matrix.M12 * vector.x + matrix.M22 * vector.y + matrix.M32 * vector.z,
-			z = matrix.M13 * vector.x + matrix.M23 * vector.y + matrix.M33 * vector.z
+		return new SystemVector3 {
+			X = matrix.M11 * vector.X + matrix.M21 * vector.Y + matrix.M31 * vector.Z,
+			Y = matrix.M12 * vector.X + matrix.M22 * vector.Y + matrix.M32 * vector.Z,
+			Z = matrix.M13 * vector.X + matrix.M23 * vector.Y + matrix.M33 * vector.Z
 		};
 	}
 

@@ -231,7 +231,7 @@ public struct Matrix3x3Symmetric : IEquatable<Matrix3x3Symmetric>
 	/// The value to scale by on the Y axis.
 	/// </param>
 	/// <param name="zScale">
-	/// The value to scale by on the Y axis.
+	/// The value to scale by on the Z axis.
 	/// </param>
 	/// <returns>
 	/// The scaling matrix.
@@ -501,12 +501,12 @@ public struct Matrix3x3Symmetric : IEquatable<Matrix3x3Symmetric>
 	/// <returns>
 	/// The transformed vector.
 	/// </returns>
-	public static Vector3 operator *(in Matrix3x3Symmetric matrix, in Vector3 vector)
+	public static SystemVector3 operator *(in Matrix3x3Symmetric matrix, in SystemVector3 vector)
 	{
-		return new Vector3 {
-			x = matrix.M11 * vector.x + matrix.M12 * vector.y + matrix.M13 * vector.z,
-			y = matrix.M12 * vector.x + matrix.M22 * vector.y + matrix.M23 * vector.z,
-			z = matrix.M13 * vector.x + matrix.M23 * vector.y + matrix.M33 * vector.z
+		return new SystemVector3 {
+			X = matrix.M11 * vector.X + matrix.M12 * vector.Y + matrix.M13 * vector.Z,
+			Y = matrix.M12 * vector.X + matrix.M22 * vector.Y + matrix.M23 * vector.Z,
+			Z = matrix.M13 * vector.X + matrix.M23 * vector.Y + matrix.M33 * vector.Z
 		};
 	}
 
@@ -522,12 +522,12 @@ public struct Matrix3x3Symmetric : IEquatable<Matrix3x3Symmetric>
 	/// <returns>
 	/// The transformed vector.
 	/// </returns>
-	public static Vector3 operator *(in Vector3 vector, in Matrix3x3Symmetric matrix)
+	public static SystemVector3 operator *(in SystemVector3 vector, in Matrix3x3Symmetric matrix)
 	{
-		return new Vector3 {
-			x = matrix.M11 * vector.x + matrix.M12 * vector.y + matrix.M13 * vector.z,
-			y = matrix.M12 * vector.x + matrix.M22 * vector.y + matrix.M23 * vector.z,
-			z = matrix.M13 * vector.x + matrix.M23 * vector.y + matrix.M33 * vector.z
+		return new SystemVector3 {
+			X = matrix.M11 * vector.X + matrix.M12 * vector.Y + matrix.M13 * vector.Z,
+			Y = matrix.M12 * vector.X + matrix.M22 * vector.Y + matrix.M23 * vector.Z,
+			Z = matrix.M13 * vector.X + matrix.M23 * vector.Y + matrix.M33 * vector.Z
 		};
 	}
 

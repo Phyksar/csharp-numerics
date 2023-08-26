@@ -445,11 +445,11 @@ public struct Matrix2x2 : IEquatable<Matrix2x2>
 	/// <returns>
 	/// The transformed vector.
 	/// </returns>
-	public static Vector2 operator *(in Matrix2x2 matrix, in Vector2 vector)
+	public static SystemVector2 operator *(in Matrix2x2 matrix, in SystemVector2 vector)
 	{
-		return new Vector2 {
-			x = matrix.M11 * vector.x + matrix.M12 * vector.y,
-			y = matrix.M21 * vector.x + matrix.M22 * vector.y,
+		return new SystemVector2 {
+			X = matrix.M11 * vector.X + matrix.M12 * vector.Y,
+			Y = matrix.M21 * vector.X + matrix.M22 * vector.Y,
 		};
 	}
 
@@ -465,11 +465,11 @@ public struct Matrix2x2 : IEquatable<Matrix2x2>
 	/// <returns>
 	/// The transformed vector.
 	/// </returns>
-	public static Vector2 operator *(in Vector2 vector, in Matrix2x2 matrix)
+	public static SystemVector2 operator *(in SystemVector2 vector, in Matrix2x2 matrix)
 	{
-		return new Vector2 {
-			x = matrix.M11 * vector.x + matrix.M21 * vector.y,
-			y = matrix.M12 * vector.x + matrix.M22 * vector.y
+		return new SystemVector2 {
+			X = matrix.M11 * vector.X + matrix.M21 * vector.Y,
+			Y = matrix.M12 * vector.X + matrix.M22 * vector.Y
 		};
 	}
 
