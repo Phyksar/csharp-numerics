@@ -1,9 +1,9 @@
 {
-  "Title": "CSharp Numerics",
+  "Title": "Numerics",
   "Type": "library",
   "Org": "phyksar",
-  "Ident": "csharp-numerics",
-  "Tags": null,
+  "Ident": "numerics",
+  "Tags": "math numerics",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
@@ -15,7 +15,7 @@
   "EditorReferences": null,
   "Metadata": {
     "ProjectTemplate": null,
-    "CsProjName": "CSharpNumerics",
+    "CsProjName": "Numerics",
     "Compiler": {
       "RootNamespace": "Sandbox",
       "DefineConstants": "SANDBOX;ADDON;DEBUG",
@@ -24,8 +24,7 @@
       "DistinctReferences": []
     },
     "Summary": "Numerics extension library",
-    "Description": "https://github.com/Phyksar/csharp-numerics",
-    "Public": true,
-    "ReplaceTags": "math numerics"
+    "Description": "https://github.com/Phyksar/sbox-numerics",
+    "Public": true
   }
 }
